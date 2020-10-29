@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <title>News App using Python Flask....</title>
+</head>
+<body>
+
+    <div class="ui container" style=" margin-top: 50px;" >
+        <div >
+            <h1 class="ui center aligned header">Daily News App.</h1>
+            <br>
+        </div>
+        <div class='field'>
+            {% for news in news_list %}
+            <div class ="ui segment" >
+                <p class= "ui big header"><b>{{news.title.text}}</b></p>
+                <span >Published On : {{news.pubDate.text}}</span><br><br>
+                <a class = "ui blue button" href="{{news.link.text}}">Read More.</a>
+                
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>
